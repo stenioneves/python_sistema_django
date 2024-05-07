@@ -1,6 +1,7 @@
 from django.urls import path
 from .views import AdicionarGastorView,AdicionarPagamentoView,ListarPagamentosView
-#importe sua view
+#importe suas views
+#URL para apontar a sua view
 urlpatterns = [
     path('gerenciar/gastos/adicionar/', view=AdicionarGastorView.as_view(),name='adicionar_gasto'),
     path('gerenciar/pagamentos/adicionar/', view=AdicionarPagamentoView.as_view(), name='adicionar_pagamento'),
