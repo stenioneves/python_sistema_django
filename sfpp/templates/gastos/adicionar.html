@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+<body>
+    {% block content %}
+    <div class="mt-2 col-md-10 rounded">
+        
+        <div class="col-md-6">
+            <h2 class="h2 text-secondary text-center">Adicionar gasto</h2>
+        
+         <form>
+          {% csrf_token %}
+          {{form|bootstrap}}
+
+          <button type="button" class="btn btn-outline-primary  btn-lg"><i class="bi bi-floppy"></i> Salvar</button>
+         </form>
+        </div>
+    </div>
+    {% endblock %}
+   
+    
+</body>
+</html>

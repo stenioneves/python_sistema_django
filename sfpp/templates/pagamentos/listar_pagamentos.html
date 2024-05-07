@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load bootstrap %}
+
+
+
+{% block content %}
+
+<div>
+    <div>
+       <div>
+           <table class="table table-striped">
+             <legend> Lista de Pagamentos</legend>
+              <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Valor</th>
+                    <th>Data </th>
+                    <th>Tipo</th>
+                    <th>Status</th>
+
+                </tr>
+              </thead>
+              <tbody>
+              <tr>
+                {% for pag in pagamentos %}
+                <td> {{pag.nome_pag}}</td>
+                <td>{{pag.valor_total}}</td>
+                <td>{{pag.Data_pag}}</td>
+                <td>{{pag.tipo}}</td>
+                <td>{% if pag.pago %}
+                    <strong class="text-success">Pago</strong>
+                </td>
+                    {% else %}
+                    <strong class="text-danger">Não Pago</strong>
+                </td>
+                {% endif %}
+
+               
+              </tr>
+              {% endfor %}
+            </tbody>
+
+
+           </table>   
+       </div>  
+    </div>
+  
+  </div>
+
+
+
+
+
+{% endblock  %}
